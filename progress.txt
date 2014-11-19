@@ -1,0 +1,40 @@
+NOTE: if you change something, please update it in this file so we can all tell how far we have gotten.
+
+For those of you wondering, this will be a C++ project, and must compile to c++98 standard. It will use
+the libsocket library (included here) for all communications in linux, and will need a Windows library
+written with EXACTLY the same API. It works like this (only include libsocket.h)
+Classes:
+	serverSocket: manages ports and allows the creation of clients
+	connectedSocket: a direct socket connection to another system
+	clientSocket: a class used to connect to an open serverSocket and create a connectedSocket
+
+Methods:
+	serverSocket:
+		serverSoket(int portno): open a server on port portno
+		connectedSocket * Accept(): fetch the next waiting client and return it as a connectedSocket
+		Close(): destroy the server
+	connectedSocket AND clientSocket:
+		connectedSocket(int fd): open a socket with manual file descriptor
+		ssize_t write(void *data, ssize_t size): write size bytes of data to stream and return number written
+		ssize_t read(void *data, ssize_t size): read size bytes from stream to data and return number read
+		Close(): destroy connection
+You may look at the file spec.txt in order to determine how we will build this system. I would love it if somebody
+would hop on and make the windows implementation of libsocket so that we can make this more cross platform.
+If you wish to work on any of the following tasks, please record your sinisterly username below and you will recieve
+a PM regarding what can be divied up to you.
+
+One more thing, please always end your entries with END OF LINE, and always add your name to the modified list,
+one name per line.
+ex:
+
+modified: 10/21/2011 blarg (initial)
+modified: 11/10/2011 banana (fixed blarg's horrible grammar)
+
+Windows libsocket: ______________, ___________________, __________________
+Master node server: _______________, __________________, _________________, _________________
+Slave node server: _______________, ___________________, ________________, __________________
+Person gathering node list: ______________, ___________________
+
+modified: 11/19/2014 phyrrus9 (initial)
+
+END OF LINE

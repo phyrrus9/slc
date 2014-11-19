@@ -1,0 +1,46 @@
+﻿Definitions:
+bb        single byte
+ss        two-byte (little endian)
+ww        four-byte (little endian)
+en        struct entry_type = { ss nodes[3], ww file_id, ss piece_id, bb md5[33], ww size }
+ec        struct entry_client_type = { ss node, ss piece_id, bb md5[33], ww size }
+nl        struct node_entry = { ss node, bb ip[4], ss port } 
+
+
+Master:
+00      Register slave node
+        followed by IP address of node in format bb bb bb bb
+        followed by port number of node in format ss
+        returns node # in format ss
+01      Deregister slave node
+        followed by node # in format ss
+        returns 00 if success and 01 if fail
+02      Get slave list
+        followed by node # in format ss
+        returns number of entries (n) in format ww (all entries matched for node #)
+        followed by n entries in format en
+03      Get file nodelist
+        followed by file_id in format ww
+        returns number of entries (n) in format ss
+        followed by n entries in format ec
+04      Get node listing
+        returns number of entries (n) in format ww
+        followed by n entries in format nl
+
+
+Slave:
+00      Query for response
+        returns 00 if success
+01      Query for piece
+        followed by file_id in format ww
+        followed by piece_id in format ss
+        returns 00 if success, 01 if fail
+        followed by node entry in format ec if success
+02      Retrieve piece
+        followed by file_id in format ww
+        followed by piece_id in format ss
+        returns piece raw data
+
+modified: 11/19/2014 phyrrus9 (initial)
+
+END OF LINE
