@@ -23,7 +23,7 @@ ww ww_toSpec(ww in)
 			((num >> 8) & 0xff00)
 			|
 			((num << 24) & 0xff000000)
-		)
+		);
 }
 
 ss ss_toHost(ss in) { return ss_toSpec(in); }
