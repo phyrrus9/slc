@@ -38,3 +38,9 @@ Person gathering node list: ______________, ___________________
 modified: 11/19/2014 phyrrus9 (initial)
 
 END OF LINE
+
+Added data_types.cpp and data_types.h so that the types all match up with the spec
+
+modified: 11/19/2014 phyrrus9 (add spec types)
+
+END OF LINE
