@@ -44,3 +44,10 @@ Added data_types.cpp and data_types.h so that the types all match up with the sp
 modified: 11/19/2014 phyrrus9 (add spec types)
 
 END OF LINE
+
+Added master_node.h with all of the API definitions, they are very well documented
+Added slave_node.h with none of the API definitions, yeah, figure that out
+
+modified: 11/19/2014 phyrrys9 (add spec master API definitions)
+
+END OF LINE
