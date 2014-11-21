@@ -51,3 +51,15 @@ Added slave_node.h with none of the API definitions, yeah, figure that out
 modified: 11/19/2014 phyrrys9 (add spec master API definitions)
 
 END OF LINE
+
+Implemented the following in master_node.cpp:
+ slave_exists (ss)
+ slave_exists (bb[4])
+ slave_discover
+ slave_register
+ slave_deregister
+It is only a rough implementation, it may not compile, but its a start.
+
+modified: 11/21/2014 phyrrus9 (begin implementing master API)
+
+END OF LINE
